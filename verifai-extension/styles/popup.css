@@ -1,0 +1,218 @@
+:root {
+  --bg-color: #0d1117;
+  --card-bg: #161b22;
+  --border-color: #30363d;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --accent-color: #238636;
+  --accent-hover: #2ea043;
+  --error-color: #f85149;
+  --success-color: #3fb950;
+  --warning-color: #d29922;
+  --link-color: #58a6ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 420px;
+  max-height: 600px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--link-color);
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+}
+
+textarea {
+  width: 100%;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--link-color);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#verify-btn {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+#verify-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+#grab-btn {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+#grab-btn:hover {
+  background-color: var(--border-color);
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--link-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#results {
+  display: none;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.result-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.badge-green { background-color: #1b4d3e; color: var(--success-color); border: 1px solid var(--success-color); }
+.badge-red { background-color: #4d1b1b; color: var(--error-color); border: 1px solid var(--error-color); }
+.badge-orange { background-color: #442200; color: var(--warning-color); border: 1px solid var(--warning-color); }
+
+.confidence {
+  font-size: 12px;
+  color: var(--text-secondary);
+  float: right;
+}
+
+.highlighted-claim {
+  font-size: 15px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.span-error {
+  background-color: rgba(248, 81, 73, 0.2);
+  border-bottom: 2px solid var(--error-color);
+  padding: 0 2px;
+}
+
+.error-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.text-box {
+  background-color: var(--bg-color);
+  border-left: 3px solid var(--link-color);
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.correction-box { border-left-color: var(--success-color); }
+.counterfactual-box { border-left-color: var(--warning-color); }
+
+.evidence-source {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  display: block;
+  text-align: right;
+}
+
+#error-message {
+  color: var(--error-color);
+  background-color: rgba(248, 81, 73, 0.1);
+  padding: 10px;
+  border-radius: 6px;
+  display: none;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+transformers
+torch
+numpy
+pandas
+faiss-cpu
+sentence-transformers
+google-genai
+openai
+requests
+duckduckgo-search

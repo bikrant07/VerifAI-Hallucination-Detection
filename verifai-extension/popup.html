@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerifAI — Hallucination Detector</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <header>
+    <div class="logo">VerifAI</div>
+    <div class="tagline">Educational Hallucination Detector</div>
+  </header>
+
+  <main>
+    <div id="error-message"></div>
+
+    <div class="input-group">
+      <label for="query">Context / User Query</label>
+      <textarea id="query" placeholder="Enter you question"></textarea>
+    </div>
+
+    <div class="input-group">
+      <label for="claim">Claim to Verify</label>
+      <textarea id="claim" placeholder="Enter response to be verified"></textarea>
+    </div>
+
+    <div class="button-group">
+      <!-- <button id="grab-btn">Grab from Page</button> -->
+      <button id="verify-btn">Verify Facts</button>
+    </div>
+
+    <div class="loading">
+      <div class="spinner"></div>
+      <p style="margin-top: 10px; font-size: 13px; color: var(--text-secondary);">Analyzing facts...</p>
+    </div>
+
+    <section id="results">
+      <div class="result-card">
+        <span id="verdict-badge" class="badge">Verdict</span>
+        <span id="confidence-val" class="confidence">0%</span>
+        
+        <div id="claim-display" class="highlighted-claim"></div>
+        
+        <div id="error-type-container" style="display:none;">
+          <div class="badge" id="error-type-badge">Error Type</div>
+        </div>
+
+        <div id="reason-section" style="margin-top: 10px;">
+          <p id="reason-text" style="font-size: 13px; color: var(--text-secondary);"></p>
+        </div>
+      </div>
+
+      <div id="correction-section" style="display:none;">
+        <div class="error-label">Correction</div>
+        <div id="correction-text" class="text-box correction-box"></div>
+      </div>
+
+      <div id="counterfactual-section" style="display:none;">
+        <div class="error-label">Counterfactual</div>
+        <div id="counterfactual-text" class="text-box counterfactual-box"></div>
+      </div>
+
+      <div id="evidence-section" style="margin-top: 16px;">
+        <div class="error-label">Top Evidence Source</div>
+        <div id="evidence-text" class="text-box" style="border-left-color: var(--link-color); font-style: italic; font-size: 13px;"></div>
+        <span id="evidence-source-tag" class="evidence-source"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align: center; padding-top: 20px; font-size: 11px; color: var(--text-secondary);">
+    Powered by VerifED | <a href="#" id="popup-dashboard-link" style="color:var(--link-color); text-decoration: none;">View Dashboard</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
