@@ -11,4 +11,5 @@ sentence-transformers
 google-genai
 openai
 requests
+plotly
 duckduckgo-search
